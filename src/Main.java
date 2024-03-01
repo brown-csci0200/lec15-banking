@@ -6,6 +6,6 @@ public class Main {
         B.addAccount(kAcct);
         System.out.println("Kathi's balance is " + kAcct.balance);  // prints 150
         B.withdraw(100465, 30);
-        System.out.println("Kathi's balance is " + kAcct.balance);  // prints 150
+        System.out.println("Kathi's balance is " + kAcct.balance);  // prints 120
     }
 }

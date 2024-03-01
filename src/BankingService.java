@@ -12,8 +12,9 @@ public class BankingService {
     }
 
     public double getBalance(int forAcctNum) {
-        for (Account acct:accounts) {
-            if (acct.number == forAcctNum)
+        Account acct = findAccount(forAcctNum);
+        // for (Account acct:accounts) {
+        //     if (acct.number == forAcctNum)
                 return acct.balance;
         }
         return 0;
@@ -32,7 +33,8 @@ public class BankingService {
     public String login(String custname, String withPwd) {
         for (Customer cust:customers) {
             if (cust.name.equals(custname)) {
-                if (cust.password.equals(withPwd)) {
+                if (cust.checkPwd(withPwd)) {
+                // if (cust.password.equals(withPwd)) {
                     return "Welcome";
                 } else {
                     return "Try Again";
