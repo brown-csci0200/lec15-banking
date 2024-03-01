@@ -8,10 +8,15 @@ public class BankingService {
 
     public BankingService(IAcctSet accounts){
         this.accounts = accounts;
+        this.customers = new CustomerList();
     }
 
     public void addAccount(Account newA) {
         this.accounts.addAccount(newA);
+    }
+
+    public Customer addCustomer(String username, String pwd) {
+        return this.customers.addCustomer(username, pwd);
     }
 
     public double getBalance(int forAcctNum) {
